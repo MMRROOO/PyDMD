@@ -772,12 +772,18 @@ matrix, or regularization methods.""".format(
                 amplitudes_snapshot_index = 0
             else:
                 amplitudes_snapshot_index = self.opt
-
-            a = np.linalg.lstsq(
-                self.modes,
-                self._snapshots.T[amplitudes_snapshot_index],
-                rcond=None,
-            )[0]
+            try:
+                a = np.linalg.lstsq(
+                    self.modes,
+                    self._snapshots.T[amplitudes_snapshot_index],
+                    rcond=None,
+                )[0]
+            except TypeError:
+                a = np.linalg.lstsq(
+                    self.modes,
+                    self._snapshots.T[amplitudes_snapshot_index],
+                    rcond=-1,
+                )[0]
 
         return a
 
