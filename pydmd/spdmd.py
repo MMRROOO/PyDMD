@@ -95,6 +95,7 @@ class SpDMD(DMD):
             rescale_mode=rescale_mode,
             forward_backward=forward_backward,
             sorted_eigs=sorted_eigs,
+            tikhonov_regularization=None
         )
 
         self.rho = rho

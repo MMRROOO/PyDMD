@@ -77,6 +77,7 @@ class HODMD(HankelDMD):
             d=d,
             sorted_eigs=sorted_eigs,
             reconstruction_method=reconstruction_method,
+            tikhonov_regularization = None
         )
 
         self.svd_rank_extra = svd_rank_extra  # TODO improve names

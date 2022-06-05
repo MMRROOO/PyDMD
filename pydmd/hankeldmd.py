@@ -76,6 +76,7 @@ class HankelDMD(DMDBase):
             opt=opt,
             rescale_mode=rescale_mode,
             sorted_eigs=sorted_eigs,
+            tikhonov_regularization = None
         )
         self._d = d
 
